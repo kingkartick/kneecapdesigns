@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+    {
+        "imports": {
+        "three": "https://unpkg.com/three@0.132.2/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.132.2/examples/jsm/"
+        }
+    }
+    </script>
+
+    <meta charset="utf-8">
+    <title>3D Scene</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            height: 100vh;
+        }
+        #canvasContainer {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+            max-width: 20vw;
+        }
+        #bg {
+            width: 100%;
+            height: 100%;
+            max-width: 20vw;
+            max-height: 50vh;
+        }
+        #imageContainer {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+        }
+        #imageContainer img {
+            min-width: 30vw;
+            max-height: 50vh;
+        }
+        #textureButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body> 
+    <div id="imageContainer">
+        <img id="textureImage" src="./assets/text1.png" alt="Image">
+    </div>
+    <div id="canvasContainer">
+        <canvas id="bg"></canvas>
+        <button id="textureButton">Change Texture</button>
+    </div>
+   
+    <script src="main.js" type="module"></script>
+</body>
+</html>
